@@ -1,0 +1,37 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>List of categories</title>
+</head>
+<body>
+<h1>List of categories</h1>
+<div class="container">
+		
+			<h3>Category List</h3>
+			
+			<hr/>
+		
+			<table class="table table-bordered table-striped" style="width: 500px;">
+			
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Name</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="cat: ${catList}">
+						<td th:text="${cat.catId}" />
+						<td><a th:href="@{/getprod/{id}(id=${cat.catId})}" th:text="${cat.catName}"></a></td>
+						
+						
+						
+						<td th:text="${cat.catDescription}" />
+					</tr>
+				</tbody>
+				
+			</table>
+		</div>
+</body>
+</html>
