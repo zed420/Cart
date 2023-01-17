@@ -15,6 +15,7 @@ import com.softoffice.cart.service.CategoryService;
 public class CategoryController {
 	
 	public static final String CAT_LIST = "listOfCategories.html";
+	public static final String REACT_HOME = "react.html";
 	
 	@Autowired
 	private CategoryService cs;
@@ -30,6 +31,11 @@ public class CategoryController {
 	public String addNewCat(Category category) {
 		cs.addNewCategory(category);
 		return "redirect:/catList";
+	}
+	
+	@GetMapping("/react_home")
+	public String reactHome() {
+		return REACT_HOME;
 	}
 	
 }
