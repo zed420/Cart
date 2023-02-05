@@ -27,6 +27,15 @@ public class Category implements Serializable {
 	private String catDescription;
 	private Date createdDate = new Date();
 	
+	public Category() {}
+	public Category(Integer id, String catName) {
+		super();
+		this.catId = id;
+		this.catName = catName;
+	}
+
+
+
 	@OneToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
 	private List<Products> prolist;
 }

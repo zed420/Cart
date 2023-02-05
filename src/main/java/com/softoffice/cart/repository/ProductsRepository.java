@@ -5,13 +5,11 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.softoffice.cart.entity.Category;
 import com.softoffice.cart.entity.Products;
 
-@Repository
 public interface ProductsRepository extends JpaRepository<Products,Integer> {
 
 	List<Products> findAll();
@@ -25,4 +23,8 @@ public interface ProductsRepository extends JpaRepository<Products,Integer> {
 	@Modifying
 	@Query("UPDATE Products p SET p.prodName = ?1 WHERE p.prodId = ?2")
 	Integer updateProdNameById(String prodName, Integer prodId);
+	
+	@Modifying
+    @Query("DELETE FROM Products WHERE prodId = ?1")
+	Integer removeById(Integer prodId);
 }

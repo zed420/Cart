@@ -27,7 +27,7 @@ public class CategoryService {
 		return cr.findByCatId(catId);
 	}
 	
-	public List<Category> getCategoryByName(String catName){
+	public Category getCategoryByName(String catName){
 		return cr.findByCatName(catName);
 	}
 	

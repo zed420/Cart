@@ -32,30 +32,38 @@ class CategoryRepositoryTest {
 	public void testFindAll() {
 		catlist = cRep.findAll();
 		assertNotNull(catlist);
-		assertEquals(catlist.size(), 2);
+		assertEquals(3, catlist.size());
 	}
 
 	@Test
 	public void testFindByCatId() {
-		Category cat = cRep.findByCatId(2);
+		Category cat = cRep.findByCatId(9);
 		assertNotNull(cat);
+		assertEquals("MotorBikes", cat.getCatName());
 	}
 
 	@Test
 	public void testFindByCatName() {
-		catlist = cRep.findByCatName("TVs");
-		assertNotNull(catlist);
+		Category cat = cRep.findByCatName("TVs");
+		assertNotNull(cat);
+		assertEquals("TVs", cat.getCatName());
 	}
 
 	@Test
 	public void testSave() {
-		
-		cat.setCatDescription("Blue Color");
-		cat.setCatName("TVs Tests");
+		cat.setCatDescription("White Color");
+		cat.setCatName("Mobile Phone");
 		Category savedCat =  cRep.save(cat);
 		
 		assertNotNull(savedCat);
 		assertTrue(cat.getCatId() > 0);
+	}
+	
+	@Test
+	public void removeCat() {
+		cRep.removeById(9);
+		cat = cRep.findByCatId(9);
+		assertNull(cat);
 	}
 
 }

@@ -5,23 +5,23 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.softoffice.cart.controller.HomeController;
-import com.softoffice.cart.controller.UserController;
+import com.softoffice.cart.controller.CategoryController;
+import com.softoffice.cart.service.CategoryService;
 
 @SpringBootTest
 class CartApplicationTests {
 	
-	@Autowired
-	UserController uc;
 	
 	@Autowired
-	HomeController hc;
+	CategoryController cc;
+	
+	@Autowired
+	CategoryService cs;
+	
 
 	@Test
 	public void contextLoads() {
-		Assertions.assertThat(uc).isNotNull();
-		Assertions.assertThat(hc).isNotNull();
+		Assertions.assertThat(cc).isNotNull();
+		Assertions.assertThat(cs).isNotNull();
 	}
-	
-
 }
