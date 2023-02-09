@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
+
+import Table from 'react-bootstrap/Table';
 
 class App extends Component {
  state = {
@@ -19,13 +21,27 @@ class App extends Component {
         <div className="App">
           <header className="App-header">
             
-            <div className="App-intro">
+            <div className="app-container">
               <h2>Categories</h2>
+              <Table striped bordered hover size="md">
+	              <thead>
+	              	<th width="30%">ID</th>
+	              	<th width="40%">Name</th>
+	              	<th width="40%">Description</th>
+	              </thead>
+              	  <tbody>
+              	  	
               {categories.map(category =>
-                  <div key={category.catId}>
-                    {category.catName} ({category.catDescription})
-                  </div>
+                  <tr>
+                  <td>{category.catId}</td>
+                    <td>{category.catName}</td> 
+                    <td>{category.catDescription}</td>
+                  </tr>
               )}
+                          	  
+              	  	
+              	  </tbody>
+              </Table>
             </div>
           </header>
         </div>

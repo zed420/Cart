@@ -1,3 +1,7 @@
+.app-container{
+	background-color: white;
+	width: 90%;
+}
 .App {
   text-align: center;
 }
@@ -13,8 +17,8 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
+.app-container .App-header {
+  background-color: #000000;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

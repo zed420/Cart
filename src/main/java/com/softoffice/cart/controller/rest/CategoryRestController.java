@@ -16,7 +16,7 @@ import com.softoffice.cart.service.CategoryService;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
-@RequestMapping("/categories")
+//@RequestMapping("/categories")
 public class CategoryRestController {
 
 	@Autowired

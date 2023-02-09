@@ -28,10 +28,11 @@ public class Category implements Serializable {
 	private Date createdDate = new Date();
 	
 	public Category() {}
-	public Category(Integer id, String catName) {
+	public Category(Integer id, String catName, String catDescription) {
 		super();
 		this.catId = id;
 		this.catName = catName;
+		this.catDescription = catDescription;
 	}
 
 
