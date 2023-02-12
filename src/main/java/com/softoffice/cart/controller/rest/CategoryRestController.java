@@ -22,7 +22,7 @@ public class CategoryRestController {
 	@Autowired
 	CategoryService cs;
 	
-	@GetMapping("/list")
+	@GetMapping("/catlist")
 	public List<Category> getAllCategories() {
 		return cs.getAllCategories();
 	}

@@ -27,7 +27,7 @@ public class UserRepTest {
 	}
 	
 	@Test
-	public void save_a_player() {
+	public void shouldSaveAUser() {
 		User user = uRep.save(new User());
 		user.setFullName("Saif2 Ali Khan");
 		user.setEmail("saif2@gmail.com");
@@ -37,7 +37,7 @@ public class UserRepTest {
 	}
 
 	@Test
-	public void should_find_all_users() {
+	public void shouldFindAllUsers() {
 		List<User> userList = new ArrayList<>();
 		userList = uRep.findAll();
 		assertThat(userList).isNotEmpty();

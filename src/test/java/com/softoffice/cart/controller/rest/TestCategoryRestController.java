@@ -49,7 +49,7 @@ public class TestCategoryRestController {
     	List<Category> catlist = Arrays.asList(new Category(1, "Cars", "Old"),
                 								new Category(2, "TVs", "Black & White"));
         when(cs.getAllCategories()).thenReturn(catlist);
-        mockMvc.perform(get("/list")
+        mockMvc.perform(get("/catlist")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].catId").value(1))
