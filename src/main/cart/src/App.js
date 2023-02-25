@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
+//import {Route, Routes} from 'react-router-dom';
 //import logo from './logo.svg';
 import './App.css';
 
 import Table from 'react-bootstrap/Table';
+
 
 class App extends Component {
  state = {
@@ -34,8 +36,8 @@ class App extends Component {
               {categories.map(category =>
                   <tr>
                   <td>{category.catId}</td>
-                    <td>{category.catName}</td> 
-                    <td>{category.catDescription}</td>
+                  <td><a href={'/prods/getByCat/' + category.catId} > {category.catName}</a></td>
+                  <td>{category.catDescription}</td>
                   </tr>
               )}
                           	  
